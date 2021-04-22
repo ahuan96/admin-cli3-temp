@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import {userLogin} from 'api/auth.js'
 export default {
   name: '',
   data(){
@@ -14,7 +15,8 @@ export default {
 
   },
   created() {
-
+    console.log(process.env)
+    userLogin()
   },
   mounted() {
 
@@ -30,6 +32,6 @@ export default {
 .header{
     height: 60px;
     line-height: 60px;
-    background: orange;
+    background: #409EFF;
 }
 </style>
