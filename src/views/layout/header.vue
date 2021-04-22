@@ -1,6 +1,6 @@
 <template>
-  <div class="header">
-      我是头
+  <div class="sy-header">
+      <h1 class="title">后台模板系统</h1>
   </div>
 </template>
 
@@ -27,9 +27,4 @@ export default {
 </script>
 
 <style lang='less' scoped>
-.header{
-    height: 60px;
-    line-height: 60px;
-    background: orange;
-}
 </style>
