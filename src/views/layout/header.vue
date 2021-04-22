@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import {userLogin} from 'api/auth.js'
 export default {
   name: '',
   data(){
@@ -14,7 +15,8 @@ export default {
 
   },
   created() {
-
+    console.log(process.env)
+    userLogin()
   },
   mounted() {
 
