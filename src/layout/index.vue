@@ -1,8 +1,8 @@
 <template>
-  <div id="">
+  <div id="app-layout">
     <Header />
-    <el-container>
-      <el-aside>
+    <el-container class="app-container">
+      <el-aside class="app-aside">
         <Menu />
       </el-aside>
       <el-main>Main</el-main>
@@ -12,8 +12,8 @@
 
 
 <script>
-import Header from "./header";
-import Menu from "./menu";
+import Header from "./components/header";
+import Menu from "./components/menu";
 export default {
   name: "",
   components: {
@@ -30,4 +30,5 @@ export default {
 </script>
 
 <style lang='less' scoped>
+
 </style>

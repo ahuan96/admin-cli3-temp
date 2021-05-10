@@ -1,12 +1,13 @@
 <template>
-  <div style="width:200px">
     <el-menu
       default-active="1-4-1"
-      class="el-menu-vertical-demo"
+      class="app-menu"
       @open="handleOpen"
       @close="handleClose"
       :collapse="isCollapse"
       :unique-opened="true"
+      background-color="#324158"
+      text-color="#b2c0d2"
     >
       <el-submenu index="1">
         <template slot="title">
@@ -39,15 +40,8 @@
         <span slot="title">导航四</span>
       </el-menu-item>
     </el-menu>
-  </div>
 </template>
 
-<style>
-.el-menu-vertical-demo:not(.el-menu--collapse) {
-  width: 200px;
-  min-height: 400px;
-}
-</style>
 
 <script>
 export default {

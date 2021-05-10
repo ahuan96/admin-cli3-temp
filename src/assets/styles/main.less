@@ -1,7 +1,37 @@
-.sy-header{
-    background: @base-color;
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+#app{
+    width: 100%;
+    height: 100%;
+    font-size: @base-font-size;
+}
+
+#app-layout{
+    height: 100%;
+    .app-container {
+        height: 100%;
+        position: fixed;
+        top: 60px;
+        width: 100%;
+        z-index: 2;
+      }
+      .app-aside{
+          height: 100%;
+          width: @base-app-aside-width!important;
+          .app-menu{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+      }
+}
+
+.app-header{
+    background: @base-app-header-bgcolor;
     height: 60px;
-    
     .title{
         color: #fff;
         line-height: 60px;
@@ -10,3 +40,4 @@
         letter-spacing:5px;
     }
 }
+

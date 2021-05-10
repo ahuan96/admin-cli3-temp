@@ -1,5 +1,5 @@
 <template>
-  <div class="sy-header">
+  <div class="app-header">
       <h1 class="title">后台模板系统</h1>
   </div>
 </template>
@@ -29,4 +29,5 @@ export default {
 </script>
 
 <style lang='less' scoped>
+
 </style>
