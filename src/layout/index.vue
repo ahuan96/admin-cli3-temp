@@ -5,7 +5,9 @@
       <el-aside class="app-aside">
         <Menu />
       </el-aside>
-      <el-main>Main</el-main>
+      <el-main>
+        <router-view/>
+      </el-main>
     </el-container>
   </div>
 </template>

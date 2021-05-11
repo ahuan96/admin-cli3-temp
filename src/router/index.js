@@ -1,32 +1,49 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import routes from './routes'
+import store from '../store'
+import {getToken} from '../utils/token'
 
-import Layout from '@/layout/index.vue'
-import Login from 'views/auth/login.vue'
-import Register from 'views/auth/register.vue'
+
 
 Vue.use(VueRouter)
 
-const routes = [
-  {
-    path: '/login',
-    name: 'Login',
-    component: Login
-  },
-  {
-    path: '/register',
-    name: 'Register',
-    component: Register
-  },
-  {
-    path: '/',
-    name: 'Layout',
-    component: Layout
-  }
-]
-
 const router = new VueRouter({
+  mode:"hash",
   routes
+})
+
+
+const whiteList = ['/login','/404'] // no redirect whitelist
+
+router.beforeEach(async(to,from,next) => {
+    console.log('路由',to)
+    const hasToken = getToken()
+    if(hasToken){
+        if (to.path === '/login') {
+            // if is logged in, redirect to the home page
+            next({ path: '/' })
+          }else{
+              const userInfo = store.state.user.userInfo
+              console.log(userInfo)
+              if(userInfo && userInfo.name){
+                next()
+              }else{
+                await store.dispatch('user/getInfo')
+                next()
+              }
+          }
+        // next()
+    }else{
+      next()
+        if(whiteList.includes(to.path)){
+          next()
+        }else{
+            console.log(to.path)
+            next(`/login?redirect=${to.path}`)
+        }
+    }
+    
 })
 
 export default router

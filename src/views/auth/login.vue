@@ -77,13 +77,12 @@ export default {
 
   },
   mounted () {
-    userLogin()
   },
   watch: {
     $route: {
       handler: function (route) {
         this.redirect = route.query && route.query.redirect
-        this.$router.push({ path: this.redirect || '/' })
+        // this.$router.push({ path: this.redirect || '/' })
       },
       immediate: true
     }

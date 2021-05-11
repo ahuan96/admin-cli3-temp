@@ -73,7 +73,6 @@ export default {
 
   },
   mounted () {
-    userLogin()
   },
   methods: {
     submitForm (formName) {
