@@ -2,9 +2,7 @@
   <div id="app-layout">
     <Header />
     <el-container class="app-container">
-      <el-aside class="app-aside">
-        <Menu />
-      </el-aside>
+      <Aside/>
       <el-main>
         <router-view/>
       </el-main>
@@ -15,12 +13,12 @@
 
 <script>
 import Header from "./components/header";
-import Menu from "./components/menu";
+import Aside from "./components/aside";
 export default {
   name: "",
   components: {
     Header,
-    Menu,
+    Aside,
   },
   data() {
     return {};

@@ -20,12 +20,31 @@ html,body{
       }
       .app-aside{
           height: 100%;
-          width: @base-app-aside-width!important;
-          .app-menu{
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
+        //   width: @base-app-aside-width!important;
+          &.app-aside-close{
+            // width: @base-app-aside-width-close!important;
+          }
+          position: relative;
+            .app-menu{
+                width: @base-app-menu-width!important;
+                height: 100%;
+                overflow: hidden;
+            }
+            .app-menu-close{
+                width: @base-app-menu-width-close!important;
+            }
+            
+            .app-menu-switch{
+                position: absolute;
+                bottom: 10px;
+                left: 0;
+                right: 0;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                height: 100px;
+            }
+          
       }
 }
 

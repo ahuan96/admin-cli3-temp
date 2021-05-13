@@ -15,8 +15,16 @@ const routes = [
       component: Register
     },{
       path: '/404',
-      component: () => import('@/views/auth/404'),
-      hidden: true
+      component: Layout,
+      redirect: '/404/index',
+      children: [
+        {
+          path: 'index',
+          name: '404',
+          component: () => import('@/views/auth/404'),
+          meta: { title: 'users', icon: 'users' }
+        }
+      ]
     },
     {
       path: '/users',
@@ -28,6 +36,19 @@ const routes = [
           path: 'index',
           name: 'users',
           component: () => import('@/views/users/index'),
+          meta: { title: 'users', icon: 'users' }
+        }
+      ]
+    },{
+      path: '/tree',
+      name: 'tree',
+      component: Layout,
+      redirect: '/index',
+      children: [
+        {
+          path: 'index',
+          name: 'tree',
+          component: () => import('@/views/tree/index'),
           meta: { title: 'users', icon: 'users' }
         }
       ]
